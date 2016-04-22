@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 03</title>
+    <style>
+       *{margin:0; padding:0;}
+       #wrap{width:800px; margin:0 auto; overflow: hidden;padding:200px;}
+       #wrap #input{float:left;}
+       #wrap #input label{display:block;margin-bottom: 10px;font-size:24px;color:#333;}
+       #wrap #input label input{width:150px;height:30px;text-align: center;font-size:20px;color:#666;}
+       #wrap #input button{width:150px;height:30px;font-size:18px;background:blue;cursor:pointer}
+       #wrap table{float:right;width:400px;text-align: center;font-size:24px;color:#333;}
+       #wrap table button{width:50px;height:30px;font-size:18px;background:green;cursor:pointer}
+    </style>
+  </head>
+<body>
+  
+  <div id='wrap'> 
+    <div id='input'>
+      <label>城市名称：<input id="aqi-city-input" type="text"></label><br>
+      <label>空气质量指数：<input id="aqi-value-input" type="text"></label><br>
+      <button id="add-btn">确认添加</button>
+
+    </div>
+    
+    <table id="aqi-table" border="1px">
+    
+    <!--
+      <tr>
+        <td>城市</td><td>空气质量</td><td>操作</td>
+      </tr>
+      <tr>
+        <td>北京</td><td>90</td><td><button>删除</button></td>
+      </tr>
+      <tr>
+        <td>上海</td><td>40</td><td><button>删除</button></td>
+      </tr>
+  	  <tr>
+        <td>成都</td><td>80</td><td><button>删除</button></td>
+      </tr>
+     -->  
+
+    </table>
+
+  </div>  
+    
+    <script src="task03.js"></script>
+  
+</body>
+</html>
