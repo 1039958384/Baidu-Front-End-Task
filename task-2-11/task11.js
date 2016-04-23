@@ -4,59 +4,58 @@
    var treeWalker = new TreeWalker(),
         btns           = document.querySelectorAll("button"),
         DFIterBtn      = btns[0],
-		    BFIter         = btns[1],
+	BFIter         = btns[1],
         DFSearchBtn    = btns[2],
-		    BFSearchBtn    = btns[3],
-		    deleteBtn      = btns[4],
-	    	addBtn         = btns[5],
-		    inputs         = document.querySelectorAll("input"),
-	    	queryInput     = inputs[0],
-		    addInput       = inputs[1],
-	    	select,                   //记录已经选择的节点
-		    treeArr        = [];      //储存树的元素,用来清空遗留颜色
-        root           = document.querySelector(".layer0");
-		
-		    trees          = document.querySelectorAll("div");
+	BFSearchBtn    = btns[3],
+	deleteBtn      = btns[4],
+	addBtn         = btns[5],
+	inputs         = document.querySelectorAll("input"),
+	queryInput     = inputs[0],
+	addInput       = inputs[1],
+	select,                   //记录已经选择的节点
+	treeArr        = [],      //储存树的元素,用来清空遗留颜色
+        root           = document.querySelector(".layer0"),
+	trees          = document.querySelectorAll("div");
 		
 
     addHandler(DFIterBtn, "click", function() {
-		select=null;//清空，以便下次添加和删除重新选择
-		//清空点击遗留的颜色
-		clearColor(treeArr);
-		//清空上次查询遗留的颜色
-		clearColor(treeWalker.stack);
+	select=null;//清空，以便下次添加和删除重新选择
+	//清空点击遗留的颜色
+	clearColor(treeArr);
+	//清空上次查询遗留的颜色
+	clearColor(treeWalker.stack);
         treeWalker.DFSearch(root);
         treeWalker.animation();
     });
 	
-	addHandler(BFIter, "click", function() {
-		select=null;
-		//清空点击遗留的颜色
-		clearColor(treeArr);
-		//清空上次查询遗留的颜色
-		clearColor(treeWalker.stack);
+    addHandler(BFIter, "click", function() {
+	select=null;
+	//清空点击遗留的颜色
+	clearColor(treeArr);
+	//清空上次查询遗留的颜色
+	clearColor(treeWalker.stack);
         treeWalker.BFSearch(root);
         treeWalker.animation();
     });
 	
     addHandler(DFSearchBtn, "click", function() {
-		select=null;
-		//清空点击遗留的颜色
-		clearColor(treeArr);
-		//清空上次查询遗留的颜色
-		clearColor(treeWalker.stack);
-		var value=queryInput.value.trim();
+	select=null;
+	//清空点击遗留的颜色
+	clearColor(treeArr);
+	//清空上次查询遗留的颜色
+	clearColor(treeWalker.stack);
+	var value=queryInput.value.trim();
         treeWalker.DFSearch(root);
         treeWalker.animation(value);
     });
 	
-	addHandler(BFSearchBtn, "click", function() {
-		select=null;
-		//清空点击遗留的颜色
-		clearColor(treeArr);
-		//清空上次查询遗留的颜色
-		clearColor(treeWalker.stack);
-		var value=queryInput.value.trim();
+    addHandler(BFSearchBtn, "click", function() {
+	select=null;
+	//清空点击遗留的颜色
+	clearColor(treeArr);
+	//清空上次查询遗留的颜色
+	clearColor(treeWalker.stack);
+	var value=queryInput.value.trim();
         treeWalker.BFSearch(root);
         treeWalker.animation(value);
     });
