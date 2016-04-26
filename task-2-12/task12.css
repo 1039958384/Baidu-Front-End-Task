@@ -1,0 +1,72 @@
+
+*{
+	padding:0;
+}
+
+#page{
+	width:800px;
+	margin:0 auto;
+	padding:20px;
+}
+#btn{
+	padding:20px;
+}
+input{
+	margin-left:40px;
+	width:230px;
+	height:35px;
+	color:#666;
+	font-size:16px;
+	text-align:center;
+	line-height:35px;
+}
+
+.btn{
+	cursor:pointer;
+	margin-left:40px;
+	border:1px solid #999;
+	width:220px;
+	height:33px;
+	font-size:15px;
+	text-align:center;
+	line-height:33px;
+	background:#fff;
+	border-radius:5px;
+	
+}
+.btn[name="delete"]{
+	margin-left:315px;
+	
+}
+#entry{
+	padding:10px;
+	margin-left:50px;
+}
+#entry span{
+	float:left;
+	display:inline-block;
+	border:1px solid #999;
+	display:inline-block;
+	width:15px;
+	height:15px;
+	text-align:center;
+	line-height:15px;
+	padding:2px;
+}
+#entry .layer{
+	cursor:pointer;
+	padding:10px;
+	border:1px solid #ccc;
+	color:#000;
+	margin-top:10px;
+	margin-left:25px;
+	display:none;
+}
+
+#entry .root{
+	cursor:pointer;
+	padding:10px;
+	width:500px;
+	border:1px solid #ccc;
+	color:#000;
+}
