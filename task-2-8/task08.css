@@ -1,0 +1,72 @@
+#Tag,#Hobby{
+	padding:5px;
+	width:1000px;
+	margin-left:40px;
+	color:#000;
+	font-size:24px;
+}
+#Tag input{
+	margin:5px;
+	padding:2px;
+	width:300px;
+	height:40px;
+	color:#666;
+	font-size:20px;
+	line-height:40px;
+	text-align:center;
+}
+
+#wrap-tag,#wrap-hobby{
+	margin:0;
+	padding:30px;
+	width:800px;
+	/*height:200px;*/
+	padding:10px;
+	overflow:hidden;
+}
+#wrap-tag span ,#wrap-hobby span{
+	display:block;
+	padding:5px;
+	/*width:50px;*/
+	color:#fff;
+	float:left;
+	height:30px; 
+	background:#46a3ff;
+	margin-right:10px;
+	margin-bottom:10px;
+	font-size:16px;
+	text-align:center;
+	line-height:30px;
+}
+
+#Hobby textarea{
+	border:1px solid #999;
+	font-size:20px;
+	width:500px;
+	height:150px;
+	margin:0;
+	padding:10px;
+	color:#666;
+	font-size:20px;
+	line-height:40px;
+	
+}
+#Hobby #confirm-btn{
+	background:#fff;
+	width:120px;
+	height:40px;
+	border:1px solid #999;
+	color:#000;
+	font-size:16px;
+    line-height:40px;
+	border-radius:5px;
+	margin:20px 5px;
+	padding:0;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	cursor:pointer;
+}
+#wrap-hobby span{
+	background:#ff8040;
+}
+
