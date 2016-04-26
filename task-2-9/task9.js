@@ -67,23 +67,16 @@
 		var stack   = this.stack,   //将全局的stack赋给该函数内部变量后，清空，保证下次遍历重新存放DOM节点
 			speeder = document.querySelector("#speeder"),
 			iter    = 0,//迭代次数
-			//self    = this,
 			timer;
 
-		this.stack = [];//作用：清空全局对象的stack属性,也可用:this.stack=[];
-		                //alert(this.stack.length)//输出为0
+		this.stack = [];
 		if(!TreeWalker.isWalking) {  //没有其它遍历时，才开始本次遍历
-			                         //alert(this instanceof TreeWalker)//输出true
-			TreeWalker.isWalking = true; //若将self.isWalking换成this.isWalking,遍历点击事件只执行一次,
-			                             //直接用TreeWalker.isWalking正常，原因是：setInterval函数是全局对象window的函数，所以函数内部的this指向window
-										 //结果遍历完，TreeWalker.isWalking并没有设置会false，导致下次遍历条件始终无法满足
-			stack[iter].style.backgroundColor = "#F125C2";  //第一次执行的时候颜色渲染有bug:全部是红色
-			                                                //给所有div设置了初始背景色后正常
+			TreeWalker.isWalking = true; //正在遍历的标志变量
+			stack[iter].style.backgroundColor = "#F125C2";  
 			timer = setInterval(function() {
-				
 				if(iter == stack.length-1) {
 					stack[iter].style.backgroundColor = "#FFF";                           
-					TreeWalker.isWalking = false;   //alert(this)//输出window,即指向全局作用域
+					TreeWalker.isWalking = false;   //alert(this)//输出window,即指向全局作用域，setInterval在全局作用域中执行
 					clearInterval(timer);           //迭代结束，清空定时器
 					
 				} else {
@@ -96,8 +89,6 @@
 		}
 		
     }	
-
-
 //-------------------------事件绑定浏览器兼容性处理---------------------------------//
 	function addHandler(element, type, handler) {
 		if(element.addEventListener) {
@@ -116,8 +107,5 @@
 		return addHandler(element, type, handler);
 	};
 
-  
-	
-})();
 
-	
+})();
