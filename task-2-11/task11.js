@@ -141,7 +141,7 @@
 				node=node.nextElementSibling;
 			}else {
 				node=node.parentNode;
-				while(!node.nextElementSibling){
+				while(!node.nextElementSibling && node!=_root){
 					node=node.parentNode;
 				}
 				if(node==_root) break;
