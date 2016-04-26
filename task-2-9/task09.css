@@ -1,0 +1,33 @@
+.layer0,.layer1,.layer2,.layer3{
+	border:1px solid #666;
+	padding:10px;
+	display:flex;
+	flex-grow:1;
+    justify-content: space-around;
+	margin:5px;
+	background:#FFF;
+	/*设置初始背景色：这里设置的样式优先级低于javascript中的动态样式node.style.background(行内样式)*/
+}
+.layer0{
+	/*width:450px;*/
+	margin:0 auto;
+}
+
+#btn{
+	padding:20px;
+	width:500px;
+	margin:0 auto;
+}
+.btn{
+	cursor:pointer;
+	margin-left:60px;
+	border:1px solid #999;
+	width:55px;
+	height:33px;
+	font-size:15px;
+	text-align:center;
+	line-height:33px;
+	background:#fff;
+	border-radius:5px;
+	
+}
