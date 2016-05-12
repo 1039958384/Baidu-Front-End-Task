@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+   <head>
+     <meta charset="utf-8">
+     <title>日历组件</title>
+     <link rel="stylesheet" href="task3-4.css">	 
+   </head>
+    <body>
+	  <div id="page">
+	    <input type="text" name="getDate"><br>
+	    <div id="calendar">
+		   <form>
+		      <span class="left"></span>
+			  <select name="month">
+				<!--动态生成<option>1</option>-->
+			  </select>
+			  <select name="year">
+				<!--动态生成<option>2016</option>-->
+			  </select>
+			  <span class="right"></span>
+		   </form>
+		   <table id="tb">
+             <!-- 表格内容根据选择的年月动态注入 -->
+		   </table>
+	    </div>
+      <div>		
+	  <script src="task3-4.js"></script> 
+	</body>
+</html>
