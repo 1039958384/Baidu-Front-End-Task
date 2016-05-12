@@ -55,7 +55,7 @@
 		//根据tb的值重新渲染日历表格
 		table.removeChild(document.getElementsByTagName("thead")[0]);
 		table.removeChild(document.getElementsByTagName("tbody")[0]);
-        genTable();
+                genTable();
 		
 	}
 	
@@ -78,12 +78,12 @@
 		
 		//更新日历
 		genMonth(prevMonth);
-	    genYear(prevYear);
+	        genYear(prevYear);
 		tbodyData(prevYear,prevMonth);
 		//根据tb的值重新渲染日历表格
 		table.removeChild(document.getElementsByTagName("thead")[0]);
 		table.removeChild(document.getElementsByTagName("tbody")[0]);
-        genTable();
+                genTable();
 	}
 	
 	//点击右三角的处理函数
@@ -105,12 +105,12 @@
 
 		//更新日历
 		genMonth(nextMonth);
-	    genYear(nextYear);
+	        genYear(nextYear);
 		tbodyData(nextYear,nextMonth);
 		//根据tb的值重新渲染日历表格
 		table.removeChild(document.getElementsByTagName("thead")[0]);
 		table.removeChild(document.getElementsByTagName("tbody")[0]);
-        genTable();
+                genTable();
 	}
 	
 	//产生月菜单
@@ -161,20 +161,20 @@
 		for(var i=0;i<7;i++){
 			if (i<week){//不可选日期
 				//tb[0][i]=preDays-week+1+i;
-                tb[0][i]="";				
+                                tb[0][i]="";				
 			}else if(i>week){
 				tb[0][i]=tb[0][i-1]+1;
 			}
 		}
 		//得到后面的数据
-	    for (var i=1;i<6;i++){
+	        for (var i=1;i<6;i++){
 			for (var j=0; j<7; j++){
 				if(j==0){
 					tb[i][j]= tb[i-1][6]+1;
 				}else{
 					tb[i][j]= tb[i][j-1]+1;
 				}
-                if(tb[i][j] >= days){//不可选日期
+                                if(tb[i][j] >= days){//不可选日期
 					//tb[i][j] = tb[i][j]-days;
 					return;
 				}								
@@ -183,7 +183,7 @@
 	}
 	
 	//根据表格数据动态产生日历表格
-	function genTable(){//-------还存在问题：样式的设置 和 1号是周日时日期的对应
+	function genTable(){
 		createThead();//创建表头
 	    createTbody();//创建表格主体
 		
@@ -193,9 +193,6 @@
 			
 			for (var i=0; i<th.length; i++){
 				var td = document.createElement("td");
-				//表头td的特殊样式
-				//td.style.fontWeight = ;
-				//td.style.color = ;
 				var tdText = document.createTextNode(th[i]);
 				td.appendChild(tdText);
 				tr.appendChild(td);
@@ -208,7 +205,7 @@
 			var current_td=[];//存储本月的td元素
 			
 			var tbody = document.createElement("tbody");
-		    for(var i=0; i<tb.length; i++){
+		        for(var i=0; i<tb.length; i++){
 				//创建tr
 				var tr = document.createElement("tr");
 				for(var j=0; j<tb[i].length; j++){
