@@ -7,7 +7,6 @@
 	padding:20px;
 	margin:0 auto;
 	margin-top:100px;
-	border:1px solid #ccc;
 	text-align:center;
 }
 #page input {
@@ -46,10 +45,10 @@
 	width:0;
 	height:0;
 	border-top:7px solid transparent;   
-    border-bottom:7px solid transparent;
-    position: absolute;	
-    top:5px;
-    cursor:pointer;	
+        border-bottom:7px solid transparent;
+        position: absolute;	
+        top:5px;
+        cursor:pointer;	
 }
 #calendar form span.left{
 	border-right:7px solid #C9C;
@@ -68,9 +67,9 @@
 	font-family:serif,"Times New Roman";
 	border:1px solid #C9C;/*统一浏览器样式*/
 	/*很关键：将默认的select选择框样式清除*/
-    /*appearance:none;
-    -moz-appearance:none;
-    -webkit-appearance:none;*/
+        /*appearance:none;
+         -moz-appearance:none;
+         -webkit-appearance:none;*/
 	/*增加自己的样式*/
 	
 }
