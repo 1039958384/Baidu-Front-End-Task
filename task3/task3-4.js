@@ -2,12 +2,12 @@
 	
 	var monthSel     = document.getElementsByName("month")[0],
 	    yearSel      = document.getElementsByName("year")[0],
-		getDate      = document.getElementsByName("getDate")[0],
+	    getDate      = document.getElementsByName("getDate")[0],
 	
 	    prevMonthBtn = document.querySelector(".left"),
 	    nextMonthBtn = document.querySelector(".right"),
 	
-        table        = document.getElementById("tb"),
+            table        = document.getElementById("tb"),
 	    th           = ["日","一","二","三","四","五","六"],
 	    tb           =[];//存储表格数据
 		
