@@ -1,13 +1,13 @@
 (function(){
 	
 	var getDate      = document.getElementsByName("getDate")[0],
-		calendar     = document.getElementById("calendar"),
-		echo         = document.querySelector(".echo"),
+	    calendar     = document.getElementById("calendar"),
+            echo         = document.querySelector(".echo"),
 	
 	    prevMonthBtn = document.querySelector(".left"),
 	    nextMonthBtn = document.querySelector(".right"),
 	
-        table        = document.getElementById("tb"),
+            table        = document.getElementById("tb"),
 	    th           = ["日","一","二","三","四","五","六"],
 	    tb           =[];//存储表格数据
 		
@@ -51,7 +51,7 @@
 				getDate.value="0"+selMonth +"/"+selDay+"/"+selYear;
 			}
 		}else{
-		   getDate.value= selMonth +"/"+selDay+"/"+selYear;
+		        getDate.value= selMonth +"/"+selDay+"/"+selYear;
 		}
 		callback();
 	}
@@ -76,7 +76,7 @@
 		//根据tb的值重新渲染日历表格
 		table.removeChild(document.getElementsByTagName("thead")[0]);
 		table.removeChild(document.getElementsByTagName("tbody")[0]);
-        genTable();
+                genTable();
 	}
 	
 	//点击右三角的处理函数
@@ -94,7 +94,7 @@
 		//根据tb的值重新渲染日历表格
 		table.removeChild(document.getElementsByTagName("thead")[0]);
 		table.removeChild(document.getElementsByTagName("tbody")[0]);
-        genTable();
+                genTable();
 	}
 	
 	//产生日历表格tb数据
@@ -124,7 +124,7 @@
 			}
 		}
 		//得到后面的数据
-	    for (var i=1;i<6;i++){
+	        for (var i=1;i<6;i++){
 			for (var j=0; j<7; j++){
 				if(j==0){
 					tb[i][j]= tb[i-1][6]+1;
@@ -142,11 +142,11 @@
 	//根据表格数据动态产生日历表格
 	function genTable(){
 		createThead();//创建表头
-	    createTbody();//创建表格主体
+	        createTbody();//创建表格主体
 		
 		function createThead(){
 			var thead = document.createElement("thead");
-		    var tr = document.createElement("tr");
+		        var tr = document.createElement("tr");
 			
 			for (var i=0; i<th.length; i++){
 				var td = document.createElement("td");
@@ -162,7 +162,7 @@
 			var current_td=[];//存储本月的td元素
 			
 			var tbody = document.createElement("tbody");
-		    for(var i=0; i<tb.length; i++){
+		        for(var i=0; i<tb.length; i++){
 				//创建tr
 				var tr = document.createElement("tr");
 				for(var j=0; j<tb[i].length; j++){
@@ -214,7 +214,7 @@
 		if(parseInt(selMonth)<=9){
 			echo.innerHTML=selYear+"年0" + selMonth +"月";
 		}else{
-		   echo.innerHTML=selYear+"年" + selMonth +"月";
+		        echo.innerHTML=selYear+"年" + selMonth +"月";
 		}
 	}
 	
