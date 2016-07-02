@@ -1,0 +1,51 @@
+body{
+	margin:0;
+	padding:20px;
+}
+#container{
+	border:1px solid #999;
+	background:#eee;
+	padding:20px;
+	overflow:hidden;
+}
+/*左边*/
+#container .left{
+	float:left;
+	width:160px;
+	background:#fff;
+	padding:20px;
+	border:1px solid #999;
+}
+/*右边*/
+#container .right{
+	float:right;
+	background:#fff;
+	padding:0 20px 20px 20px;
+	border:1px solid #999;	
+}
+/*中间自适应部分*/
+#container  .center{
+	border:1px solid #999;
+	background:#fff;
+	padding:20px;
+	
+	/*为了使中间自适应*/
+	margin-left:220px;
+	margin-right:140px;
+}
+
+#container .left .logo{
+	background:#ccc;
+	width:80px;
+	height:80px;
+	border:1px solid #999;
+}
+#container .right .logo{
+	background:#ccc;
+	width:80px;
+	height:80px;
+	margin-top:20px;
+	border:1px solid #999;
+}
+
+
