@@ -28,17 +28,20 @@
 ###CSS3 box-sizing属性
 box-sizing属性可以为三个值之一： content-box（default）， border-box， padding-box。
 
-* content-box: border和padding不计算入width之内
+* content-box: border 和 padding 都不会计算入 width 之内
 
 > 浏览器对盒模型的解释遵从 W3C 标准，改变一下 padding 或 border 的值，会导致 box 总尺寸发生变化，想要不影响页面的整体布局，就不得不重新计算 box 的 width值
 
-* padding-box: padding计算入width内
+* padding-box: padding 会计算入 width 内
 
-> 改变padding值不会导致 box 总尺寸发生变化，但增加border会加大box总尺寸
+> 改变 padding 值不会导致 box 总尺寸发生变化，但增加 border 会加大box总尺寸
 
-* border-box: border和padding计算入width之内
+* border-box: border 和 padding 都计算入 width 之内
 
 > 浏览器对盒模型的解释与 IE6 相同，它的好处：无论如何改动 border 与 padding 的值，都不会导致 box 总尺寸发生变化，也就不会打乱页面整体布局。
 
-试用这个新属性，Firefox 请使用 -moz-box-sizing，Safari / WebKit 请使用 -webkit-box-sizing，Opera 直接用 box-sizing 即可。
+试用这个新属性，
+* Firefox 请使用 -moz-box-sizing，
+* Safari / WebKit 请使用 -webkit-box-sizing，
+* 其它浏览器直接用 box-sizing 即可。
 
