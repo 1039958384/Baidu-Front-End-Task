@@ -1,0 +1,39 @@
+body{
+	margin:0;
+	padding:20px;
+}
+
+ .left {       
+   float: left;        
+   width: 190px;   
+   background:red;
+   
+   margin-left:-100%;
+   
+   position:relative;
+   left:-190px;
+   
+}   
+
+.right {        
+	float:left;        
+	width: 220px;	
+	background:blue;
+	
+	margin-left:-220px;
+	
+	position:relative;
+	right:-220px;
+ }
+ 
+ .center {        
+   float: left;      
+   width: 100%; 
+   background:green; 
+ } 
+ 
+#container{
+	padding:20px 240px 20px 210px;
+	overflow:hidden;
+	border:1px solid #999;
+}
