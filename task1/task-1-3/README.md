@@ -15,8 +15,8 @@
 ##方法二：又称为双飞翼布局
 * 父元素：overflow:hidden;
 * 中间列：float:left;   width:100%;    padding:0 220px 0 190px;
-* 左列：  float:left;   width:190px;   position:relative;left:-190px;
-* 右列：  float:left;   width:220px;   position:relative;right:-220px;
+* 左列：  float:left;   width:190px;    margin-left:-100%(使其移动到上一行的最左边);  position:relative;left:-190px;
+* 右列：  float:left;   width:220px;   margin-left:-220px(使其移动到上一行的最右边);  position:relative;right:-220px;
 * 具体文件见：index1.html及index1.css 
 * [方法二的demo](http://1039958384.github.io/IFE/task1/task-1-3/index1.html)
 
