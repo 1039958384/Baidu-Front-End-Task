@@ -1,0 +1,65 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+#wrap{
+  box-sizing: border-box;/*将padding和border计算入width之内*/
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  padding:10px;  /*为了设置box与浏览器边缘之间的边距*/
+  
+  width: 100%; 
+  overflow:hidden;
+  background:lightblue;  
+}
+
+.box{
+  box-sizing: border-box; /*将padding和border计算入width之内*/
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  padding: 10px; /*为了设置box之间的边距; 不能使用margin(因为margin无法计入width内,使得媒体查询中的比例不再正确)*/
+  
+  float: left;
+}
+.inner{
+  height: 50px;
+  background-color: #eee;
+  border: 1px solid #999; 
+}
+
+@media screen and (min-width:769px){
+	.col-md-1{
+		width:8.33333%;
+	}
+	.col-md-2{
+		width:16.66667%;
+	}
+	.col-md-3{
+		width:25%;
+	}
+	.col-md-4{
+		width:33.33333%;
+	}
+	.col-md-6{
+		width:50%;
+	}
+}
+
+@media screen and (max-width:768px){
+	.col-xs-2{
+		width:16.66667%;
+	}
+	.col-xs-3{
+		 width: 25%;
+	}
+	.col-xs-6{
+		width: 50%;
+	}
+	.col-xs-8{
+		width: 66.66667%; 
+	}
+	.col-xs-12{
+		width:100%;
+	}
+}
