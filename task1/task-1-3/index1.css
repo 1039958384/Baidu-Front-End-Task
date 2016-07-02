@@ -3,37 +3,60 @@ body{
 	padding:20px;
 }
 
- .left {       
+#container  .left {       
    float: left;        
-   width: 190px;   
-   background:red;
+   width: 200px;
+   padding:20px;   
    
    margin-left:-100%;
    
    position:relative;
-   left:-190px;
+   left:-220px;
    
 }   
 
-.right {        
+#container .right {        
 	float:left;        
-	width: 220px;	
-	background:blue;
+	width: 122px;
+    padding:0 20px 20px 20px;	
 	
 	margin-left:-220px;
 	
 	position:relative;
-	right:-220px;
+	right:-240px;
  }
  
- .center {        
+#container .center {   
    float: left;      
-   width: 100%; 
-   background:green; 
+   width: 100%;
+   padding:20px;    
  } 
  
 #container{
-	padding:20px 240px 20px 210px;
+	padding:20px 162px 20px 240px;
 	overflow:hidden;
 	border:1px solid #999;
+	background:#eee;
 }
+#container .center, #container .right, #container .left{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border:1px solid #999;
+	background:#fff;
+}
+
+#container .left .logo{
+	background:#ccc;
+	width:80px;
+	height:80px;
+	border:1px solid #999;
+}
+#container .right .logo{
+	background:#ccc;
+	width:80px;
+	height:80px;
+	margin-top:20px;
+	border:1px solid #999;
+}
+
