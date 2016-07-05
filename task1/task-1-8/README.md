@@ -88,3 +88,5 @@ align-content属性定义了多根轴线的对齐方式(多根主轴的对齐方
 * flex-basis属性: 如果设置为“0”，不考虑剩余空白空间。如果设置为auto，则按照flex-grow值分配剩余空白空间
 * flex属性: 是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
 * align-self：用来在单独的伸缩项目上覆写默认的对齐方式; 属性值：auto | flex-start | flex-end | center | baseline | stretch;
+
+![Flexbox布局常用属性](./Flexbox布局常用属性表.png)
