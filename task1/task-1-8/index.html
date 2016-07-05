@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox布局</title>
+    <style>
+		.flex-container {
+		    list-style:none;
+		    padding:20px;
+			
+			display: flex;
+			display: -webkit-flex; /* Safari */
+			display: -ms-flexbox;
+			
+			flex-flow: row nowrap;
+			
+			justify-content: space-between;/*第一个元素紧贴浏览器左边,最后一个元素紧贴浏览器右边*/
+			-webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+
+			align-items: center; /* 使四个元素以中间为基准线水平排列 */
+	        -webkit-align-items: center;
+            -ms-flex-align: center;
+			
+		}
+		.flex-item {
+		    margin:20px;
+			border:1px solid #f00;
+			width: 150px;
+	    }
+		.flex-item1 {
+		   height:120px;
+		}
+		.flex-item2 {
+		   height:100px;
+		}
+		.flex-item3 {
+		   height:40px;
+		}
+		.flex-item4 {
+		   border:1px solid #00f;
+		   height:200px;
+		}
+		
+		@media all and (max-width: 640px) {
+			.flex-item4 {
+				-webkit-order: -1;
+					-ms-flex-order: -1;
+						order: -1;
+			}
+			.flex-container {
+				-webkit-flex-wrap: wrap;
+					-ms-flex-wrap: wrap;
+						flex-wrap: wrap;
+				-webkit-align-items: flex-start;
+					-ms-flex-align: start;
+						align-items: flex-start;
+			}
+		}
+
+	</style>
+</head>
+<body>
+    <ul class="flex-container">
+        <li class="flex-item flex-item1"></li>
+        <li class="flex-item flex-item2"></li>
+        <li class="flex-item flex-item3"></li>
+        <li class="flex-item flex-item4"></li>
+    </ul>
+</body>
+</html>
