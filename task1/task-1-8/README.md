@@ -32,7 +32,7 @@ Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提�
 * align-items
 * align-content
 
-1. flex-direction属性
+flex-direction属性
 flex-direction属性：决定主轴的方向（即被包含项目的排列方向）。
 它可能有4个值。
 
@@ -41,7 +41,7 @@ flex-direction属性：决定主轴的方向（即被包含项目的排列方向
 > column：主轴为垂直方向，起点在上沿。<br>
 > column-reverse：主轴为垂直方向，起点在下沿。
 
-2.  flex-wrap属性
+flex-wrap属性
 默认情况下，被包含项都排在一条线（又称"轴线"）上(主轴为row时，都在一行上)
 flex-wrap属性定义，如果一条轴线排不下，如何换行。
 
@@ -49,11 +49,11 @@ flex-wrap属性定义，如果一条轴线排不下，如何换行。
 > wrap：换行，第一行在上方。<br>
 > wrap-reverse：换行，第一行在下方。
 
-3.  flex-flow属性是flex-direction属性和flex-wrap属性的简写形式
+flex-flow属性是flex-direction属性和flex-wrap属性的简写形式
 
 > 默认值为row nowrap
 
-4.  justify-content属性
+justify-content属性
 justify-content属性定义了被包含项在主轴上的对齐方式
 
 > flex-start（默认值）：在主轴的起始位置对齐<br>
@@ -62,7 +62,7 @@ justify-content属性定义了被包含项在主轴上的对齐方式
 > space-between: 两端对齐(第一个在起始位置，最后一个在结束位置)，项目之间的间隔都相等<br>
 > space-around: 每个项目两侧的间隔相等。所以，包含项之间的间隔比项目与边框的间隔大一倍。
 
-5.  align-items属性
+align-items属性
 align-items属性定义项目在交叉轴上如何对齐。
 
 > flex-start：交叉轴的起点对齐。<br>
@@ -71,7 +71,7 @@ align-items属性定义项目在交叉轴上如何对齐。
 > baseline: 项目的第一行文字的基线对齐。<br>
 > stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
 
-6.  align-content属性
+align-content属性
 align-content属性定义了多根轴线的对齐方式(多根主轴的对齐方式，类似于伸缩项目在主轴上使用“justify-content”一样)。如果项目只有一根轴线，该属性不起作用。
 
 >  flex-start：与交叉轴的起点对齐。<br>
