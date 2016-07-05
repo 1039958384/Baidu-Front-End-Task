@@ -19,7 +19,6 @@ Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提�
 } 
   .child{
     margin:auto;
-    
     width:100px;
     height:100px;
 }`
