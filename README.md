@@ -5,28 +5,29 @@
 为前端学习者提供了一个学习、交流的平台
 [百度前端技术学院](http://ife.baidu.com/)
 
-##我做完的任务及demo列表
+##我完成的任务及任务Demo列表
 
-### task1 :学习、掌握HTML及CSS
-task1的源代码放在task1文件夹下
+### task1 :第一阶段任务，学习、掌握HTML及CSS
+task1的源代码放在task1文件夹下<br>
+task1文件夹下对每个任务做了总结
 
-#### 现给出完成任务的demo及其说明
+#### 现给出完成任务说明及其Ddemo
 
-1. 面向零基础的HTML代码编写
-  ![demo地址]()
-2. 基于任务1的HTML代码，实现简单的CSS代码编写
+1. 练习HTML标签 ： [Demo](http://1039958384.github.io/IFE/task1/task-1-1/)；
 
-3. HTML、CSS布局入门，三栏式布局的实践
+2. 在 任务1 的基础上练习CSS ：  [Demo](http://1039958384.github.io/IFE/task1/task-1-2)；
 
-4. HTML、CSS布局深入，定位和居中问题的实践
+3. 在 任务2 的基础上对网页重新布局: 实现两列布局(左列宽度自适应，右列宽度固定) ： [Demo](http://1039958384.github.io/IFE/task1/task-1-5)；
 
-5. 基于任务1的HTML代码，实现一个稍微复杂的CSS代码编写
+4. 使用两种方法实现了三栏式布局(左右宽度固定，中间宽度随浏览器窗口自适应，父元素的高度由最高的子元素(最高列)决定) ： [Demo1](http://1039958384.github.io/IFE/task1/task-1-3),  [Demo2](http://1039958384.github.io/IFE/task1/task-1-3/index1.html)；
 
-6. 按照设计图，通过HTML/CSS实现一个像报纸杂志一样的页面布局排版
+5. 实现元素的水平垂直居中 ： [Demo](http://1039958384.github.io/IFE/task1/task-1-4)；
 
-7.  网格/栅格化布局学习与实践
+6. 综合使用HTML及CSS实现报纸排版 ： [Demo](http://1039958384.github.io/IFE/task1/task-1-6)；
 
-8.  按照设计图，通过HTML/CSS实现一个复杂的业务系统页面
+7.  使用CSS3媒体查询，实现响应式页面 ： [Demo](http://1039958384.github.io/IFE/task1/task-1-7)；
+
+8.   Flexbox布局学习并对Flexbox的常用属性做了总结 ： [Demo](http://1039958384.github.io/IFE/task1/task-1-8)；
 
 
 
