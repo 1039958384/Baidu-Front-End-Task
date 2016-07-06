@@ -94,7 +94,7 @@ function renderAqiList() {
 			oTrin.appendChild(oTd2in);
 			
 			var oTd3in=document.createElement('td');
-			oTd3in.innerHTML = '<button onclick="delBtnHandle(this)">删除</button>';
+			oTd3in.innerHTML = '<button>删除</button>';
 			oTrin.appendChild(oTd3in);
 			
 			oTable.appendChild(oTrin);
@@ -127,14 +127,13 @@ function addBtnHandle() {
  * 点击各个删除按钮的时候的处理逻辑
  * 获取哪个城市数据被删，删除数据，更新表格显示
  */
-function delBtnHandle(_this) {
-  //找到点击button对应的城市名，然后删除aqiData对应的属性
-   //alert('');//---由于renderAqiList()函数中oTable.innerHTML='',很快被执行到，因此弹窗没有效果
-   
-   var city=_this.parentNode.previousSibling.previousSibling.innerHTML;
-   delete aqiData[city];
-
-   renderAqiList();
+function delBtnHandle() {
+    var oTable=document.getElementById('aqi-table');
+	    oTable.onclick=function(e){
+	        if(e.target.nodeName=='BUTTON') {
+	           oTable.removeChild(e.target.parentNode.parentNode); 
+	        }
+	}
 }
 
 function init() {
@@ -142,40 +141,22 @@ function init() {
     var btn=document.getElementById('add-btn');
   // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
   	btn.onclick=function(){
-		 addBtnHandle();
-
-        // 想办法给aqi-table中的所有删除按钮绑定事件，触发delBtnHandle函数
-	    //取得表格中的所有button
-	  //   var obtns=document.getElementsByTagName('button');//----这里等页面加载完时，只有一个button，
-	  //   var btnDels=[];                                  //----只有删除功能放在btn事件绑定函数中才能执行到
-	  //   for(var i=1;i<obtns.length;i++){
-	  //       btnDels[i-1]=obtns[i];
-	  //   }
-
-	     //给表格中的button添加事件
-	 	 // for (var i=0;i<btnDels.length;i++){ //触发事件只能执行一次？？因为只有点击btn的时候才会执行到
-		 //     btnDels[i].onclick=function(){    //不点击btn时，该段无法执行
-	     //         delBtnHandle(this);//只能删除一行，删除不了表头？？
-		 //     }
-		 //   btnDels[i].setAttribute('onclick','delBtnHandle(this)');  //仍然只能删除一行 ？？？
-	  //   }
-
-	  /*
-	  var oTable=document.getElementById('aqi-table');
-	  oTable.onclick=function(e){
-	       if(e.target.nodeName=='button') {
-	           oTable.removeChild(e.target.parentNode.parentNode); 
-	       }
-	  }
-	  */
-
-	   
+		addBtnHandle();  
 	}
-  
+  // 点击删除按钮,删除对应的数据行
+	delBtnHandle();
+	
 }    
-
 	
 init();
+
+
+
+	
+
+
+
+
 
 
 
