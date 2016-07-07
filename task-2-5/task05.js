@@ -70,20 +70,25 @@
 	
 	
 	/**
-	*点击队列中元素的处理逻辑
+	*点击删除队列中元素
 	*/
 	//给所有div添加onclick事件，当事件触发时，在数组中删除该div
 	var wrapFifo=document.getElementById('wrap-fifo');
-	wrapFifo.addEventListener("click", function(e) {
+	wrapFifo.onclick = function(e){
 		if (e.target && e.target.nodeName === "SPAN") {
-			var index=Arr.indexOf(e.target.innerHTML);
-			Arr.splice(index, 1);//删除index位置开始的1个元素
-			//渲染队列
-			fifo();
+			var elems =  document.getElementsByTagName("span");
+			for(var i=0;i<elems.length;i++){
+				(function(i){
+					elems[i].onclick = function(){
+					        Arr.splice(i, 1);//删除i位置开始的1个元素;
+					        //渲染队列
+				                fifo();
+					}
+				})(i);
+			}
 		}
-	})
+	}
     
     
-	
 })();
 
