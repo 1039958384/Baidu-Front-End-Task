@@ -43,5 +43,5 @@ button{
 	line-height:50px;
 	position:absolute;
 	bottom:0;
-	
+	cursor:pointer;
 }
