@@ -85,14 +85,20 @@
 	*/
 	//给所有div添加onclick事件，当事件触发时，在数组中删除该div
 	var wrapFifo=document.getElementById('wrap-fifo');
-	wrapFifo.addEventListener("click", function(e) {
+	wrapFifo.onclick = function(e){
 		if (e.target && e.target.nodeName === "SPAN") {
-			var index=Arr.indexOf(parseInt(e.target.innerHTML));
-			Arr.splice(index, 1);//删除index位置开始的1个元素
-			//渲染队列
-			fifo(Arr);
+			var elems =  document.getElementsByTagName("span");
+			for(var i=0;i<elems.length;i++){
+				(function(i){
+					elems[i].onclick = function(){
+						Arr.splice(i, 1);//删除i位置开始的1个元素;
+						//渲染队列
+			            fifo(Arr);
+					}
+				})(i);
+			}
 		}
-	})
+	}
     
 	
 	/**
@@ -115,8 +121,15 @@
 						Arr[j] = Arr[j + 1];
 						Arr[j + 1] = tmp;
 						//setTimeout(fifo,2000);
-	                    snapshots.push(JSON.parse(JSON.stringify(Arr))); // 记录快照,有什么区别呢？
-						//snapshots.push(Arr);//可以排序，但没有延迟效果,记录不下每次的改变
+						
+	                                        //snapshots.push(JSON.parse(JSON.stringify(Arr))); //--浅拷贝
+						snapshots.push(Arr.slice());//--浅拷贝
+						
+						//数组对象的克隆问题：直接复制Arr,Arr改变，拷贝的值也会改变(此时为对象的深拷贝)
+						
+						//借助JSON转化便不再跟着变了(实现的是对象的浅拷贝---数组的浅拷贝还可以用slice实现)。
+						
+						//snapshots.push(Arr);//--深拷贝：可以排序，但没有延迟效果,记录不下每次的改变
 				}
 			}
         }
