@@ -19,12 +19,12 @@
 
 * 遍历数组 Arr ,使用字符串数组的 search()方法对 Arr 中的每一项按照关键词 value 进行模糊匹配<br>
 
- <pre><code> var index = Arr[i].search(value); //遍历匹配项<br>
+<pre><code> var index = Arr[i].search(value); //遍历匹配项<br>
 if(index != -1) { //存在匹配项时，改变样式 <br> 
-   var reg = new RegExp(value,"g"); //使用构造函数的方式可以根据字符串变量声明正则表达式 <br>
+   <pre><code>var reg = new RegExp(value,"g"); //使用构造函数的方式可以根据字符串变量声明正则表达式 <br>
    var inner=cSpan.innerHTML.replace(reg,"<span style=background:red>"+value+"</span>");<br>
    //cSpan.innerHTML.replace(value,"<span style=background:red>"+value+"</span>"); :只能匹配到第一个<br>
-   cSpan.innerHTML=inner;
+   cSpan.innerHTML=inner;</pre></code>
 }</pre></code>
 
 ## 任务总结
