@@ -88,14 +88,20 @@
 	*/
 	//给所有div添加onclick事件，当事件触发时，在数组中删除该div
 	var wrapFifo=document.getElementById('wrap-fifo');
-	wrapFifo.addEventListener("click", function(e) {
+	wrapFifo.onclick = function(e){
 		if (e.target && e.target.nodeName === "P") {
-			var index=Arr.indexOf(e.target.innerHTML);
-			Arr.splice(index, 1);//删除index位置开始的1个元素
-			//渲染队列
-			fifo(Arr);
+			var elems =  document.getElementsByTagName("p");
+			for(var i=0;i<elems.length;i++){
+				(function(i){
+					elems[i].onclick = function(){
+						Arr.splice(i, 1);//删除i位置开始的1个元素;
+						//渲染队列
+			            fifo(Arr);
+					}
+				})(i);
+			}
 		}
-	})
+	}
     
 	
 	/**
@@ -109,9 +115,14 @@
 			   //匹配前，先将上次效果还原
 			   var cSpan=document.getElementsByClassName("c")[i];
 			   cSpan.innerHTML=Arr[i];
-			   var index=Arr[i].search(value);//遍历匹配项
+			   
+			   var index = Arr[i].search(value);//遍历匹配项
+			   
 			   if(index != -1) { //存在匹配项时，改变样式  
-				   var inner=cSpan.innerHTML.replace(value,"<span style=background:red>"+value+"</span>");
+			       var reg = new RegExp(value,"g");
+				   var inner=cSpan.innerHTML.replace(reg,"<span style=background:red>"+value+"</span>");
+				   // var inner=cSpan.innerHTML.replace(value,"<span style=background:red>"+value+"</span>");//只能匹配到第一个
+				   
 			       cSpan.innerHTML=inner;
 			   }
 		    }
@@ -119,7 +130,11 @@
 	}
 
 	
+  
+	
 })();
+
+
 
 
 	
