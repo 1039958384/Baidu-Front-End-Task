@@ -91,3 +91,20 @@ function unique2(arr){
 * 测试结果：<br>
 
 >  unique2(arr) ： ["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, ""]<br>
+
+### 方法三：先用sort对数组排序，然后借助临时数组，存储相同元素的最后一个，该方法只能用于纯Number类型数组
+<pre><code> `
+function unique3(arr){
+	arr.sort(function(a,b){
+		return a-b;
+	});
+	console.log(arr)
+	var temp = [];
+	for(var i=0;i<arr.length;i++){
+		if(arr[i] !== arr[i+1]){
+			temp.push(arr[i]);
+		}
+	}
+	return temp;
+} `
+</pre></code>
