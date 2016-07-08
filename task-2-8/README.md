@@ -98,7 +98,6 @@ function unique3(arr){
 	arr.sort(function(a,b){
 		return a-b;
 	});
-	console.log(arr)
 	var temp = [];
 	for(var i=0;i<arr.length;i++){
 		if(arr[i] !== arr[i+1]){
