@@ -28,6 +28,10 @@
 4. 如果碰到Object，就继续做循环。
 5. 如果数组中会出现null 或者 undefine，判断相等时，使用强等于。
 
+* 测试用例：<br>
+
+>  arr = ["1",3,"1",1,4,5,1,"2",5,1,{"name":"li","age":20},2,4,3,{"name":"li","age":20},""];<br>
+
 ### 方法一：借助于临时数组与indexOf , 算法复杂度为:O(n^2)
 <pre><code> `
 function unique1(arr){
@@ -41,9 +45,52 @@ return temp;
 } `
 </pre></code>
 
-* 测试：<br>
+* 测试结果：<br>
 
->  arr = ["1",3,"1",1,4,5,1,"2",5,1,{"name":"li","age":20},2,4,3,{"name":"li","age":20},""];<br>
->  unique1(arr) ： ["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, Object { name="li",  age=20}, ""]
+>  unique1(arr) ： ["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, Object { name="li",  age=20}, ""]<br>
 
+* bug 无法区分对象
 
+### 方法二 ： 用JavaScript中的Object对象来当作哈希表，可以去重完全由 Number 基本类型组成的数组
+<pre><code> `
+function unique2(arr){
+	var temp=[];
+	var hash={};
+    for(var i=0; i<arr.length;i++){
+		if(!hash[arr[i]]){
+			hash[arr[i]]=true;
+			temp.push(arr[i]);
+		}
+	}
+    return temp;	
+}
+ `
+</pre></code>
+
+* 测试结果：<br>
+
+>  unique2(arr) ： ["1", 3, 4, 5, "2", Object { name="li",  age=20}, ""]<br>
+
+* bug : 无法区分： 1 和 "1"
+* 修改
+
+<pre><code> `
+function unique2(arr){
+	var temp=[];
+	var hash={};
+    for(var i=0; i<arr.length;i++){
+  	        var item = arr[i];
+		var key = typeof(item)+item;
+		if(!hash[key]){
+			hash[key]=true;
+			temp.push(arr[i]);
+		}
+	}
+    return temp;	
+}
+ `
+</pre></code>
+
+* 测试结果：<br>
+
+>  unique2(arr) ： ["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, ""]<br>
