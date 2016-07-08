@@ -22,4 +22,28 @@
 
 对于给定数组的去重问题：
 
+1. 如果是一个已知排序的array，可以做一次循环，判断当前的item是否等于前面那个item，如果不等于或不存在前面的item，就push到result中。（这个很快）
+2.  如果顺序杂乱，可以做一次循环，用一个对象标记该item是否存在，如果不存在，就push到result中。underscore的_uniq方法，使用Array的indexOf方法，这样的话，假如数组非常庞大，性能会差。
+3. 如果数组中存在function，直接判断是否相等是不行的，可以toString()一下，再进行比较。
+4. 如果碰到Object，就继续做循环。
+5. 如果数组中会出现null 或者 undefine，判断相等时，使用强等于。
+
+### 方法一：借助于临时数组与indexOf , 算法复杂度为:O(n^2)
+<pre><code> `
+function unique1(arr){
+var temp = [];
+for(var i=0; i<arr.length; i++){
+		if(temp.indexOf(arr[i]) == -1){
+			temp.push(arr[i]);
+		}
+}
+return temp;
+} `
+</pre></code>
+
+* 测试：<br>
+
+>  arr = ["1",3,"1",1,4,5,1,"2",5,1,{"name":"li","age":20},2,4,3,{"name":"li","age":20},""];<br>
+>  unique1(arr) ： ["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, Object { name="li",  age=20}, ""]
+
 
