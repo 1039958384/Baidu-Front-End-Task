@@ -19,10 +19,11 @@
 ## 任务实现总结
 
 二叉树的遍历有三种方法：
+
 1. 前序遍历：优先访问节点本身，再访问后代节点(先左后右)
 
 2. 中序遍历：先访问左后代节点，再访问节点本身，最后访问右后代节点
 
 3. 后序遍历：先访问节点的后代节点(先左后右)，再访问节点本身
 
-详见 [我的博客](http://blog.csdn.net/ll_xiaohanqing_91/article/category/6123626)
+* 详见 [我的博客](http://blog.csdn.net/ll_xiaohanqing_91/article/details/51868134)
