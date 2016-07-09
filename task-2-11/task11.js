@@ -1,61 +1,62 @@
 	
-(function(){
+(function(){//---------------有bug
 	//用递归的方法遍历树
    var treeWalker = new TreeWalker(),
         btns           = document.querySelectorAll("button"),
         DFIterBtn      = btns[0],
-	BFIter         = btns[1],
+		BFIter         = btns[1],
         DFSearchBtn    = btns[2],
-	BFSearchBtn    = btns[3],
-	deleteBtn      = btns[4],
-	addBtn         = btns[5],
-	inputs         = document.querySelectorAll("input"),
-	queryInput     = inputs[0],
-	addInput       = inputs[1],
-	select,                   //记录已经选择的节点
-	treeArr        = [],      //储存树的元素,用来清空遗留颜色
+		BFSearchBtn    = btns[3],
+		deleteBtn      = btns[4],
+		addBtn         = btns[5],
+		inputs         = document.querySelectorAll("input"),
+		queryInput     = inputs[0],
+		addInput       = inputs[1],
+		select,                   //记录已经选择的节点
+		treeArr        = [],      //储存树的元素,用来清空遗留颜色
         root           = document.querySelector(".layer0"),
-	trees          = document.querySelectorAll("div");
+		
+		trees          = document.querySelectorAll("div");
 		
 
     addHandler(DFIterBtn, "click", function() {
-	select=null;//清空，以便下次添加和删除重新选择
-	//清空点击遗留的颜色
-	clearColor(treeArr);
-	//清空上次查询遗留的颜色
-	clearColor(treeWalker.stack);
+		select=null;//清空，以便下次添加和删除重新选择
+		//清空点击遗留的颜色
+		clearColor(treeArr);
+		//清空上次查询遗留的颜色
+		clearColor(treeWalker.stack);
         treeWalker.DFSearch(root);
         treeWalker.animation();
     });
 	
-    addHandler(BFIter, "click", function() {
-	select=null;
-	//清空点击遗留的颜色
-	clearColor(treeArr);
-	//清空上次查询遗留的颜色
-	clearColor(treeWalker.stack);
+	addHandler(BFIter, "click", function() {
+		select=null;
+		//清空点击遗留的颜色
+		clearColor(treeArr);
+		//清空上次查询遗留的颜色
+		clearColor(treeWalker.stack);
         treeWalker.BFSearch(root);
         treeWalker.animation();
     });
 	
     addHandler(DFSearchBtn, "click", function() {
-	select=null;
-	//清空点击遗留的颜色
-	clearColor(treeArr);
-	//清空上次查询遗留的颜色
-	clearColor(treeWalker.stack);
-	var value=queryInput.value.trim();
+		select=null;
+		//清空点击遗留的颜色
+		clearColor(treeArr);
+		//清空上次查询遗留的颜色
+		clearColor(treeWalker.stack);
+		var value=queryInput.value.trim();
         treeWalker.DFSearch(root);
         treeWalker.animation(value);
     });
 	
-    addHandler(BFSearchBtn, "click", function() {
-	select=null;
-	//清空点击遗留的颜色
-	clearColor(treeArr);
-	//清空上次查询遗留的颜色
-	clearColor(treeWalker.stack);
-	var value=queryInput.value.trim();
+	addHandler(BFSearchBtn, "click", function() {
+		select=null;
+		//清空点击遗留的颜色
+		clearColor(treeArr);
+		//清空上次查询遗留的颜色
+		clearColor(treeWalker.stack);
+		var value=queryInput.value.trim();
         treeWalker.BFSearch(root);
         treeWalker.animation(value);
     });
@@ -130,7 +131,7 @@
 	
 
 	/* 深度优先遍历 ：先遍历完最深一层，再逐层返回，将遍历的结果存在stack数组中*/
-	TreeWalker.prototype.DFSearch =  function(node,value){
+	/*TreeWalker.prototype.DFSearch =  function(node,value){
 		this.stack=[];
 		this.stack.push(node);
         var _root=node;	
@@ -140,6 +141,8 @@
 			}else if(node.nextElementSibling){//再找未遍历过的最深节点的兄弟节点
 				node=node.nextElementSibling;
 			}else {
+				//node=_root.children[i];//----------有bug
+				//i=i+1;
 				node=node.parentNode;
 				while(!node.nextElementSibling && node!=_root){
 					node=node.parentNode;
@@ -149,23 +152,33 @@
 			}
             this.stack.push(node);			
 		}	
+	};*/
+	TreeWalker.prototype.DFSearch =  function(node){
+		this.stack=[];
+        var stack=[];		
+        while(node!=null){
+			this.stack.push(node);
+			if(node.children.length!=0){
+				for (var i=node.children.length-1;i>=0;i--){
+					stack.push(node.children[i]);
+				}
+			}
+            node = stack.pop();			
+		}	
 	};
 	
     /* 广度优先遍历 ：先遍历完一层，再遍历更深一层，将遍历的结果存在stack数组中*/
 	TreeWalker.prototype.BFSearch =  function(node,value){
 		this.stack=[];
-		this.stack.push(node);
-		var temp=[];
+		var queue=[];
 	    while(node!=null){
+			this.stack.push(node);
 			if(node.children.length!=0){
 				for (var i=0;i<node.children.length;i++){
-					temp.push(node.children[i]);
-					this.stack.push(node.children[i]);
+					queue.push(node.children[i]);
 				}
-				node=temp.shift();//先入先出，借助于数据结构：队列
-			}else{
-				node=temp.shift();
-			}	
+			}
+            node=queue.shift();//先入先出，借助于数据结构：队列			
 	    }		
 	};
 
@@ -239,6 +252,7 @@
 		return addHandler(element, type, handler);
 	};
 
-
+  
+	
 })();
 
