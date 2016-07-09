@@ -11,9 +11,9 @@
 ## 将类数组对象转换为数组的方法总结
 ES6:
 其它：
-<pre><code>`
-for (var i=0; i<trees.length; i++)
+<pre><code>
+`for (var i=0; i<trees.length; i++)
 {
 		treeArr.push(trees[i]);
-}'
+}`
 </pre></code>
