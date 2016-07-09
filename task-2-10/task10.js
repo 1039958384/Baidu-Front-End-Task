@@ -19,8 +19,7 @@
     });
 	
 	addHandler(BFIter, "click", function() {
-		//清空上次查询遗留的颜色
-		treeWalker.clearColor();
+		treeWalker.clearColor();//清空上次查询遗留的颜色
         treeWalker.BFSearch(root);
         treeWalker.animation();
     });
@@ -50,7 +49,7 @@
 
 	
 	/* 深度优先遍历 ：先遍历完最深一层，再逐层返回，将遍历的结果存在stack数组中*/
-	TreeWalker.prototype.DFSearch =  function(node){
+	/*TreeWalker.prototype.DFSearch =  function(node){
 		this.stack=[];
 		this.stack.push(node);
         var _root=node;	
@@ -69,24 +68,48 @@
 			}
             this.stack.push(node);			
 		}	
+	};*/
+	TreeWalker.prototype.DFSearch =  function(node){
+	    this.stack=[];
+            var stack=[];		
+            while(node!=null){
+		this.stack.push(node);
+		if(node.children.length!=0){
+			for (var i=node.children.length-1;i>=0;i--){//按照相反的子节点顺序压入栈
+		            stack.push(node.children[i]);//将该节点的所有子节点压入栈 
+			}
+	        }
+                node = stack.pop();//弹出栈的子节点顺序就是原来的正确顺序(因为栈是先入后出的			
+	    }	
 	};
 	
 	
     /* 广度优先遍历 ：先遍历完一层，再遍历更深一层，将遍历的结果存在stack数组中*/
-	TreeWalker.prototype.BFSearch =  function(node){
+	/*TreeWalker.prototype.BFSearch =  function(node){
 		this.stack=[];
 		this.stack.push(node);
-		var temp=[];
+		var queue=[];//借助于队列,暂存当前层的节点
 	    while(node!=null){
 			if(node.children.length!=0){
 				for (var i=0;i<node.children.length;i++){
-					temp.push(node.children[i]);
+					queue.push(node.children[i]);
 					this.stack.push(node.children[i]);
 				}
-				node=temp.shift();//先入先出，借助于数据结构：队列
-			}else{
-				node=temp.shift();
-			}	
+			}
+			node=queue.shift();//先入先出，借助于数据结构：队列
+	    }		
+	};*/
+	TreeWalker.prototype.BFSearch =  function(node,value){
+		this.stack=[];
+		var queue=[];
+	    while(node!=null){
+			this.stack.push(node);
+			if(node.children.length!=0){
+				for (var i=0;i<node.children.length;i++){
+					queue.push(node.children[i]);//借助于队列,暂存当前节点的所有子节点 
+				}
+			}
+            node=queue.shift();//先入先出，借助于数据结构：队列			
 	    }		
 	};
 
@@ -165,7 +188,3 @@
 	
 })();
 
-
-
-
-	
