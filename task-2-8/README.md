@@ -48,7 +48,7 @@ return temp;
 
 * bug 无法区分对象
 
-### 方法二 ： 用JavaScript中的Object对象来当作哈希表，可以去重完全由 Number 基本类型组成的数组
+### 方法二 ： 用JavaScript中的Object对象来当作哈希表
 <pre><code> `
 function unique2(arr){
 	var temp=[];
