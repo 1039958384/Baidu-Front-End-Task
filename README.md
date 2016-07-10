@@ -5,13 +5,13 @@
 为前端学习者提供了一个学习、交流的平台
 [百度前端技术学院](http://ife.baidu.com/)
 
-##我完成的任务及任务Demo列表
+##我完成的任务及Demo列表
 
 ### task1 :第一阶段任务，学习、掌握HTML及CSS
 task1的源代码放在task1文件夹下<br>
 task1文件夹下对每个任务做了总结
 
-#### 现给出完成任务说明及其Ddemo
+#### 现给出完成任务说明及其Demo
 
 1. 练习HTML标签 ： [Demo](http://1039958384.github.io/IFE/task1/task-1-1/)；
 
@@ -33,28 +33,26 @@ task1文件夹下对每个任务做了总结
 
 ### task2 ： 学习、掌握JavaScript
 完成任务2的代码为 task2-3 ~ task-2-12
-#### 现给出完成任务的demo及其说明
-  1. 继续熟悉JavaScript
+#### 现给出完成的任务说明及其Demo
+  1. task-2-3: 城市空气质量录入及删除 , 熟悉JavaScript DOM 操作 [Demo](http://1039958384.github.io/IFE/task-2-3);
   
-  2. 学习事件代理、表单验证等
+  2. task-2-4: 用DOM实现一个柱状图图表, [Demo](http://1039958384.github.io/IFE/task-2-4)  ;
 
-  3. 做一个较为完成的有JavaScript交互的页面
+  3. task-2-5: 用JavaScript模拟队列, [Demo](http://1039958384.github.io/IFE/task-2-5) ; 
   
-  4. 实现一个基本队列的相关操作
+  4. task-2-6: 用JavaScript实现排序算法的可视化呈现， [Demo](http://1039958384.github.io/IFE/task-2-6) ; 
 
-  5. 丰富队列操作，实现一个排序算法的可视化呈现
+  5. task-2-7: JavaScript处理字符串,实现文本的模糊匹配,熟悉了正则表达与其他字符串操作函数，[Demo](http://1039958384.github.io/IFE/task-2-7) ;
   
-  6. 实践字符串、数组相关方法
+  6. task-2-8: 基于task-2-7，继续用JavaScript 处理字符串，学习总结了数组去重常用的方法，[Demo](http://1039958384.github.io/IFE/task-2-8) ; 
   
-  7. 结合实际运用场景，综合练习十八到二十的学习内容
+  7. task-2-9: JavaScript 实现 DOM 二叉树的遍历，总结了递归和非递归(借助栈)的方式，实现二叉DOM树的前序，中序，后序遍历的区别，[Demo](http://1039958384.github.io/IFE/task-2-9)  ;
   
-  8. 用JavaScript实践二叉树的遍历
+  8. task-2-10: JavaScript遍历 DOM 多叉树，以非递归的方式实现 DOM 多叉树的深度优先遍历(借助栈)和广度优先遍历(借助队列)，[Demo](http://1039958384.github.io/IFE/task-2-10) ;
  
-  9. 用JavaScript实践多叉树的遍历
+  9. task-2-11: JavaScript实现 DOM 多叉树的查找、添加、删除节点功能，[Demo](http://1039958384.github.io/IFE/task-2-11);
   
-  10. 用JavaScript实践多叉树的节点相关操作
-  
-  11. 结合实际运用场景，综合运用树的操作做一个实用的东西
+  10. task-2-12: 综合运用树的操作做一个实用的东西，实现了一个树形组件，[Demo](http://1039958384.github.io/IFE/task-2-12)
 
 ### task3 ： 综合练习HTML，CSS，JavaScript
   RIA 问卷管理平台准备工作， 代码放在task3文件夹下
