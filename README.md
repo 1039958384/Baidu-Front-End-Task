@@ -32,7 +32,10 @@ task1文件夹下对每个任务做了总结
 
 
 ### task2 ： 学习、掌握JavaScript
-完成任务2的代码为 task2-3 ~ task-2-12
+完成任务2的代码为 task2-3 ~ task-2-12<br>
+
+通过本阶段的学习，对JavaScript中常用的数据结构，DOM操作，以及数据处理方式有了更加深入的认识！
+
 #### 现给出完成的任务说明及其Demo
   1. task-2-3: 城市空气质量录入及删除 , 熟悉JavaScript DOM 操作 [Demo](http://1039958384.github.io/IFE/task-2-3);
   
