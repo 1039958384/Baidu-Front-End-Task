@@ -9,11 +9,22 @@
 
 
 ## 将类数组对象转换为数组的方法总结
-ES6:
-其它：
+* ES5的写法：
+
 <pre><code>
-`for (var i=0; i<trees.length; i++)
+` var Arr = [].slice.call(arrayLike); `
+</pre></code>
+
+* ES6的扩展方法:
+<pre><code>
+` var Arr = Array.from(arrayLike); `
+</pre></code>
+
+* 本任务中想到的方法：
+<pre><code>
+`var Arr = [];
+for (var i=0; i<arrayLike.length; i++)
 {
-		treeArr.push(trees[i]);
+		Arr.push(arrayLike[i]);
 }`
 </pre></code>
