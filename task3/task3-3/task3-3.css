@@ -1,0 +1,11 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+table {
+	/*表格的宽度和高度 根据内容自适应*/
+    margin:50px;
+	border-collapse:collapse;
+	text-align:center;
+}
