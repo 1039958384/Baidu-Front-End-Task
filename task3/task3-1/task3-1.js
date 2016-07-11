@@ -35,13 +35,8 @@
 	//登录框的拖拽效果
 	drag(login);
 	
-	//通过移动登录框的右、下边框，改变其大小
-	
-	
-	
-	
 	//拖拽功能函数
-	function drag(node){
+	function drag(node){//只能在视口1拖拽，滚动条下移后不能继续向下拖拽?????原因是原来拖动范围没有加上scroll().top
 		addHandler(node,"mousedown",function(e){
 			
 			var diffX=e.clientX-this.offsetLeft;
@@ -85,7 +80,7 @@
 	//登录框弹出时的处理函数
 	function open_login(){
 		login.style.display="block";
-		center(login,600,300);
+		center(login);
 		
 		screen.style.display="block";//遮罩效果
 		screen.style.height=getViewport().height+ scroll().top+"px";
@@ -94,17 +89,22 @@
 		
 		//页面滚动时，login始终保持居中
 		window.onresize=function(){
-			center(login,600,300);
+			center(login);
 			screen.style.height=getViewport().height+ scroll().top+"px";
 		}
 		window.onscroll=function(){
-			center(login,600,300);
+			center(login);
 			screen.style.height=getViewport().height+ scroll().top+"px";
 		}		
 	}
 	
 	//设置元素在页面视口中间显示
-	function center(node,width,height){
+	function center(node){
+		
+		//得到某个元素计算后的样式
+		var width = parseInt(getStyle(node,"width").replace("px",""));
+		var height = parseInt(getStyle(node,"height").replace("px",""));
+
 		var top=(getViewport().height - height)/2 + scroll().top;
 		var left=(getViewport().width - width)/2 + scroll().left;
 		node.style.top  = top + "px";
@@ -132,6 +132,15 @@
 		}
 	}
 	
+	//跨浏览器获得计算后的样式
+	function getStyle(elements,attr){  		   
+		if(typeof window.getComputedStyle != "undefined"){//W3C  
+			computedStyle=window.getComputedStyle(elements,null);
+			return computedStyle[attr];
+		}else if(typeof elements.currentStyle != "undefined"){//IE
+			return elements.currentStyle[attr];
+		}
+	}
 	
 	//跨浏览器获取页面视口大小
 	function getViewport(){
