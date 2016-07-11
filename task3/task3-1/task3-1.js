@@ -61,13 +61,13 @@
 				var top=e.clientY-diffY;
 				if(left<0){//浏览器视口的左边缘
 					left=0;
-				} else if(left>getViewport().width-_this.offsetWidth){//浏览器视口的右边缘
-					left=getViewport().width-_this.offsetWidth;
+				} else if(left>getViewport().width+scroll().left-_this.offsetWidth){//浏览器视口的右边缘
+					left=getViewport().width+scroll().left-_this.offsetWidth;
 				}
 				if(top<0){//浏览器视口的上边缘
 					top=0;
-				}else if(top>getViewport().height-_this.offsetHeight){//浏览器视口的下边缘
-					top=getViewport().height-_this.offsetHeight;
+				}else if(top>getViewport().height+scroll().top-_this.offsetHeight){//浏览器视口的下边缘
+					top=getViewport().height+scroll().top-_this.offsetHeight;
 				}
 				_this.style.left=left+"px";
 				_this.style.top=top+"px"; //只根据左上角移动，因为点一下oDiv的CSS效果马上改变
@@ -89,6 +89,8 @@
 		
 		screen.style.display="block";//遮罩效果
 		screen.style.height=getViewport().height+ scroll().top+"px";
+		
+		//document.documentElement.style.overflow="hidden";  
 		
 		//页面滚动时，login始终保持居中
 		window.onresize=function(){
@@ -113,6 +115,8 @@
 	function close_login(){
 		login.style.display="none";
 		screen.style.display="none";
+		
+		//document.documentElement.style.overflow="auto"; //解锁时还原滚动条  
 	}
 	
 
@@ -153,7 +157,6 @@
 			height : pageHeight
 		}		
 	}
-	
 	
 	//------事件绑定浏览器兼容性处理--------//
 	function addHandler(element, type, handler) {
