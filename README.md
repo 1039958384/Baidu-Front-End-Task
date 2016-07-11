@@ -60,20 +60,20 @@ task1文件夹下对每个任务做了总结
 ### task3 ： 综合练习HTML，CSS，JavaScript
   RIA 问卷管理平台准备工作， 代码放在task3文件夹下
 #### 现给出完成任务的demo及其说明
-  1. 浮出层组件实现
+  1. 浮出层组件实现，[Demo](http://1039958384.github.io/IFE/task3/task3-1);
   
-  2. 支持表头排序功能的表格组件实现
+  2. 支持表头排序功能的表格组件实现，[Demo](http://1039958384.github.io/IFE/task3/task3-2);
 
-  3. 首行冻结表格组件实现
+  3. 首行冻结表格组件实现，[Demo](http://1039958384.github.io/IFE/task3/task3-3);
   
-  4. 简单日历组件实现
+  4. 简单日历组件实现，[Demo](http://1039958384.github.io/IFE/task3/task3-4);
   
-  5. 日历组件升级
+  5. 日历组件升级，[Demo](http://1039958384.github.io/IFE/task3/task3-5);
   
-  6. 支持日期段选择的日历组件实现
+  6. 支持日期段选择的日历组件实现，[Demo](http://1039958384.github.io/IFE/task3/task3-6)。
 
 
-### task4 : 在第三阶段的基础上 结合模块化、过程管理工具，综合运用HTML，CSS，JavaScript实现一个小型的网站或者应用。
+### task4 : 在第三阶段的基础上 结合模块化、过程管理工具，综合运用HTML，CSS，JavaScript实现一个小型的网站。
 RIA 问卷管理平台，详细介绍和源代码见仓库: [questionnaire](https://github.com/1039958384/questionnaire)
 
 
