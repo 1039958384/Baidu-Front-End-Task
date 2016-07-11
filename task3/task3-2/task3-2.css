@@ -1,0 +1,55 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+table {
+	/*表格的宽度和高度 根据内容自适应*/
+    margin:50px;
+	border-collapse:collapse;
+	text-align:center;
+}
+
+/*************以下样式全部通过JS定制*****************/
+
+/*table tr td{
+	border:2px solid #ccc;
+	width:150px;/*最小宽度设置为120px 再小就不好看了*/
+	/*height:50px;
+	font-size:18px;
+	line-height:50px;
+}
+table thead tr{/*定制表头的样式*/
+	/*background:#333;
+}
+table thead tr td{
+	color:#fff;
+	font-weight:bold;
+	position:relative;/*为了定位排序按钮*/
+	/*top:0;
+	left:0;	
+}*/
+
+
+/*******以下是排序按钮的样式***********/
+/*table thead span{
+	display:inline-block;
+	width:0px;
+	height:0px;
+	border-left:6px solid transparent;
+	border-right:6px solid transparent;
+	cursor:pointer;
+	
+	/*position:relative;*/  /*absolute好处:脱离文档流：增加该项不改变父元素*/
+    /*float:right;*/
+/*	position:absolute;
+	right:30px;
+}
+table thead .upTria{
+	top:10px;
+	border-bottom:12px solid #fff;
+}
+table thead .lowTria{
+	bottom:10px;
+	border-top:12px solid #fff;
+}*/
