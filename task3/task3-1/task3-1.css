@@ -1,0 +1,83 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+header{
+	height:40px;
+	background:#04a;
+	padding:10px;
+}
+header .login{
+	color:#fff;
+	float:right;
+	width:50px;
+	height:40px;
+	line-height:40px;
+	margin-right:40px;
+}
+
+#screen{
+	background:#666;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	
+	position:absolute;
+	z-index:9998;/*为了遮罩效果*/
+	top:0;/*absolute不设置top和left，元素不显示*/
+	left:0;
+	display:none;/*登录框弹出时显示*/
+	width:100%;
+}
+
+
+#login{
+	width:600px;
+	height:300px;
+	border:1px solid #999;
+	position:absolute;
+	background:#fff;
+	
+	z-index:9999;/*保证在遮罩的上面显示*/
+	display:none;/*点击登录时显示*/
+	
+}
+
+#login h2{
+	height:30px;
+	font-size:18px;
+	background:#aaa;
+	border:1px solid #666;
+	line-height:30px;
+	padding:10px;
+    text-indent:10px;
+	color:#fff;
+	font-weight:normal;
+	cursor:move;
+}
+
+#login h2 img{
+	float:right;
+	margin-right:10px;
+	margin-top:10px;
+	cursor:pointer;
+}
+
+#login div{
+	padding:20px;
+	font-size:16px;
+}
+
+#login div.btn{
+	margin-top:120px;
+	text-align:right;
+}
+
+#login div.btn button{
+	background:#aaa;
+	color:#fff;
+	width:100px;
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+}
