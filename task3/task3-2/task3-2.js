@@ -23,7 +23,8 @@
 						["小红",60,90,90,240],
 						["小亮",70,100,60,230],
 						["小文",90,80,80,250]
-		              ]
+		              ],
+		sortable : [2,3,4,5]
 	};
 
 	createThead();//创建表头
@@ -48,9 +49,9 @@
 			
 			//给指定的表头中的td添加排序功能
 			td.style.position = "relative";
-		    td.style.top = "0px";
-		    td.style.left = "0px";
-			if(i>=1){//给后四个td添加排序按钮
+		        td.style.top = "0px";
+		        td.style.left = "0px";
+			if(init.sortable.indexOf(i+1) != -1){//给指定列添加排序按钮
 				addupTria(td);
 				addlowTria(td);
 			}
