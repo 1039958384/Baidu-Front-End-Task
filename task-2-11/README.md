@@ -14,20 +14,23 @@
 
 * ES5的写法：
 
-<pre><code>
-` var Arr = [].slice.call(arrayLike); `
-</pre></code>
+```JavaScript
+var Arr = [].slice.call(arrayLike);
+```
 
 * ES6的扩展方法:
-<pre><code>
-` var Arr = Array.from(arrayLike); `
-</pre></code>
+
+```JavaScript
+var Arr = Array.from(arrayLike); 
+```
 
 * 本任务中想到的方法：
-<pre><code>
-`var Arr = [];
+
+```JavaScript
+var Arr = [];
 for (var i=0; i<arrayLike.length; i++)
 {
-		Arr.push(arrayLike[i]);
-}`
-</pre></code>
+	Arr.push(arrayLike[i]);
+}
+```
+
