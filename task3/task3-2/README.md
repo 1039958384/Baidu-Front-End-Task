@@ -25,7 +25,7 @@ init对象用于定义表格样式、表格数据 以及 配置哪些列可排�
 ###　排序按钮的实现
 * 上三角 
 ``` JavaScript
-  span.style.width="0px";
+        span.style.width="0px";
 	span.style.height="0px";
 	span.style.borderLeft="6px solid transparent";
 	span.style.borderRight="6px solid transparent";
@@ -34,11 +34,11 @@ init对象用于定义表格样式、表格数据 以及 配置哪些列可排�
 ```
 * 上三角 
 ``` JavaScript
-  span.style.width="0px";
+        span.style.width="0px";
 	span.style.height="0px";
 	span.style.borderLeft="6px solid transparent";
 	span.style.borderRight="6px solid transparent";
-  span.style.bottom="10px";
+        span.style.bottom="10px";
 	span.style.borderTop="12px solid #fff";
 ```
 
@@ -46,7 +46,8 @@ init对象用于定义表格样式、表格数据 以及 配置哪些列可排�
 
 ```JavaScript
 //根据数组init.tbTrContent的第二列数据，对整个数组从小到大排序
-init.tbTrContent.sort(function(x,y){return x[1]-y[1];});
+init.tbTrContent.sort(function(x,y){return x[1]-y[1];}); 
+
 //根据数组init.tbTrContent的第二列数据，对整个数组从大到小排序
 init.tbTrContent.sort(function(x,y){return y[1]-x[1];});
 ```
