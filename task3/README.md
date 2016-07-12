@@ -3,7 +3,7 @@
 
 文件 task3-1 ~ task3-6 是为第四阶段大任务：RIA 问卷管理平台 的准备工作
 
-通过本阶段的练习，我学习了使用JavaScript 实现整个UI功能组件的方法，熟悉了如何使用JavaScript 定制可配置样式和功能的UI组件
+通过本阶段的练习，我学习了如何使用 JavaScript 定制可配置样式和功能的UI组件，通过对功能组件的重构(仓库[Works](https://github.com/1039958384/Works)中的组件 Layer, Table 和 Calendar )，了解了模块化开发可复用的 WEB组件 的方法。
 
 # 文件说明
 * task3-1 ：实现了一个浮出层组件, [Demo](http://1039958384.github.io/IFE/task3/task3-1/);
