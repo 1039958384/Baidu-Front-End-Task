@@ -29,7 +29,6 @@
 > *  而遮罩层在弹出层的后面,在其它所有文档元素的前面,因此实现中将其 z-index 属性设为了9998(position:absolute是前提)，并设置为半透明;
 
 * JS处理: <br> 
-
 > * 兼容性处理：获取滚动条、获取浏览器视口大小、得到DOM元素计算后的样式以及事件绑定和解绑都需要针对低版本IE做兼容性处理   <br>
 > * 拖拽功能： 创建一个绝对定位的元素，使其可以用鼠标移动<br>
     (通过mousemove事件对象的 event.clientX 与 event.clientY 属性可以获得鼠标点击的坐标) - (mousedown事件的 event.clientX 与 event.clientY 属性可以获得拖拽开始时的鼠标坐标) = 鼠标移动的距离
