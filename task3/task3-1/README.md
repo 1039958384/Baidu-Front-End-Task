@@ -25,13 +25,18 @@
 ### 弹出层的实现原理
 
 * CSS处理:<br> 
-弹出层在文档中所有元素的前面,实现中将其 z-index 属性设为9999(position:absolute是前提)；<br>  而遮罩层在弹出层的后面,在其它所有文档元素的前面,因此实现中将其 z-index 属性设为了9998(position:absolute是前提)，并设置为半透明;
+> *  弹出层在文档中所有元素的前面,实现中将其 z-index 属性设为9999(position:absolute是前提)；<br>  
+> *  而遮罩层在弹出层的后面,在其它所有文档元素的前面,因此实现中将其 z-index 属性设为了9998(position:absolute是前提)，并设置为半透明;
 
 * JS处理: <br> 
-兼容性处理：获取滚动条、获取浏览器视口大小、得到DOM元素计算后的样式以及事件绑定和解绑都需要针对低版本IE做兼容性处理   <br>
-拖拽功能： 创建一个绝对定位的元素，使其可以用鼠标移动(event.clientX与event.clientY可以获得鼠标点击的坐标)<br>
-视口中居中显示：  <br>
-mousedown、mousemove、mouseup事件的利用： <br>
+
+> * 兼容性处理：获取滚动条、获取浏览器视口大小、得到DOM元素计算后的样式以及事件绑定和解绑都需要针对低版本IE做兼容性处理   <br>
+> * 拖拽功能： 创建一个绝对定位的元素，使其可以用鼠标移动<br>
+    (通过mousemove事件对象的 event.clientX 与 event.clientY 属性可以获得鼠标点击的坐标) - (mousedown事件的 event.clientX 与 event.clientY 属性可以获得拖拽开始时的鼠标坐标) = 鼠标移动的距离
+> * 元素在视口中居中显示：<br>
+    元素left = (视口宽度-元素宽度)/2 + 水平滚动条右移距离  <br>
+    元素top = (视口高度-元素高度)/2 + 垂直滚动条下移距离   
+> * mousedown 拖拽开始、mousemove 拖拽进行中、mouseup拖拽结束 事件的利用 <br>
 
 
 
