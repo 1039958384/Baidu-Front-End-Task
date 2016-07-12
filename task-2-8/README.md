@@ -27,29 +27,34 @@
 
 * 测试用例：<br>
 
->  arr = ["1",3,"1",1,4,5,1,"2",5,1,{"name":"li","age":20},2,4,3,{"name":"li","age":20},""];<br>
+```JavaScript
+arr = ["1",3,"1",1,4,5,1,"2",5,1,{"name":"li","age":20},2,4,3,{"name":"li","age":20},""];
+```
 
 ### 方法一：借助于临时数组与indexOf , 算法复杂度为:O(n^2)
-<pre><code> `
+
+```JavaScript
 function unique1(arr){
-var temp = [];
-for(var i=0; i<arr.length; i++){
+	var temp = [];
+	for(var i=0; i<arr.length; i++){
 		if(temp.indexOf(arr[i]) == -1){
 			temp.push(arr[i]);
 		}
-}
-return temp;
-} `
-</pre></code>
+	}
+	return temp;
+} 
+```
 
 * 测试结果：<br>
 
->  unique1(arr) ： ["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, Object { name="li",  age=20}, ""]<br>
-
+```JavaScript
+["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, Object { name="li",  age=20}, ""]
+```
 * bug 无法区分对象
 
 ### 方法二 ： 用JavaScript中的Object对象来当作哈希表
-<pre><code> `
+
+```JavaScript
 function unique2(arr){
 	var temp=[];
 	var hash={};
@@ -61,17 +66,18 @@ function unique2(arr){
 	}
     return temp;	
 }
- `
-</pre></code>
+```
 
 * 测试结果：<br>
 
->  unique2(arr) ： ["1", 3, 4, 5, "2", Object { name="li",  age=20}, ""]<br>
+```JavaScript
+unique2(arr) ： ["1", 3, 4, 5, "2", Object { name="li",  age=20}, ""]
+```
 
 * bug : 无法区分： 1 和 "1"
 * 修改
 
-<pre><code> `
+```JavaScript
 function unique2(arr){
 	var temp=[];
 	var hash={};
@@ -85,15 +91,16 @@ function unique2(arr){
 	}
     return temp;	
 }
- `
-</pre></code>
+```
 
 * 测试结果：<br>
 
->  unique2(arr) ： ["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, ""]<br>
+```JavaScript
+unique2(arr) ： ["1", 3, 1, 4, 5, "2", Object { name="li",  age=20}, 2, ""]
+```
 
 ### 方法三：先用sort对数组排序，然后借助临时数组，存储相同元素的最后一个，该方法只能用于纯Number类型数组
-<pre><code> `
+```JavaScript
 function unique3(arr){
 	arr.sort(function(a,b){
 		return a-b;
@@ -105,5 +112,5 @@ function unique3(arr){
 		}
 	}
 	return temp;
-} `
-</pre></code>
+} 
+```
