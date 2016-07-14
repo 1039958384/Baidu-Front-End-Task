@@ -3,7 +3,7 @@
 
 文件 task3-1 ~ task3-6 是为第四阶段大任务：RIA 问卷管理平台 的准备工作
 
-通过本阶段的练习，我学习了如何使用 JavaScript 定制可配置样式和功能的UI组件，通过对功能组件的重构(仓库[Works](https://github.com/1039958384/Works)中的组件 Layer, Table 和 Calendar )，了解了模块化开发可复用的 WEB组件 的方法。
+通过本阶段的练习，我学习了如何使用 JavaScript 定制可配置样式和功能的UI组件，通过对功能组件的重构(仓库[Works](https://github.com/1039958384/Works)中的组件 Layer, SortableTable 和 Calendar )，了解了模块化开发可复用的 WEB组件 的方法。
 
 # 文件说明
 * task3-1 ：实现了一个浮出层组件, [Demo](http://1039958384.github.io/IFE/task3/task3-1/);
@@ -14,4 +14,4 @@
 
 
 # 功能组件重构
-仓库[Works](https://github.com/1039958384/Works)中的组件 Layer, Table 和 Calendar 是对本阶段实现的3个功能组件进行了 封装 和重构，以对象的方式重新实现了这3个组件，增强了3个功能组件的复用性。 
+仓库[Works](https://github.com/1039958384/Works)中的组件 Layer, Sortable 和 Calendar 是对本阶段实现的3个功能组件进行了 封装 和重构，以对象的方式重新实现了这3个组件，增强了3个功能组件的复用性。 
