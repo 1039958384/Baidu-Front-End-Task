@@ -2,12 +2,12 @@
 	
 	var monthSel     = document.getElementsByName("month")[0],
 	    yearSel      = document.getElementsByName("year")[0],
-		getDate      = document.getElementsByName("getDate")[0],
+	    getDate      = document.getElementsByName("getDate")[0],
 	
 	    prevMonthBtn = document.querySelector(".left"),
 	    nextMonthBtn = document.querySelector(".right"),
 	
-        table        = document.getElementById("tb"),
+            table        = document.getElementById("tb"),
 	    th           = ["日","一","二","三","四","五","六"],
 	    tb           =[];//存储表格数据
 		
@@ -65,7 +65,8 @@
 		//根据tb的值重新渲染日历表格
 		table.removeChild(document.getElementsByTagName("thead")[0]);
 		table.removeChild(document.getElementsByTagName("tbody")[0]);
-        genTable();
+		
+                genTable();
 		
 	}
 	
@@ -88,12 +89,12 @@
 		
 		//更新日历
 		genMonth(prevMonth);
-	    genYear(prevYear);
+	        genYear(prevYear);
 		tbodyData(prevYear,prevMonth);
 		//根据tb的值重新渲染日历表格
 		table.removeChild(document.getElementsByTagName("thead")[0]);
 		table.removeChild(document.getElementsByTagName("tbody")[0]);
-        genTable();
+                genTable();
 	}
 	
 	//点击右三角的处理函数
@@ -120,34 +121,38 @@
 		//根据tb的值重新渲染日历表格
 		table.removeChild(document.getElementsByTagName("thead")[0]);
 		table.removeChild(document.getElementsByTagName("tbody")[0]);
-        genTable();
+                genTable();
 	}
 	
 	//产生月菜单
 	function genMonth(month){
 		monthSel.innerHTML="";
-		var html="";
 		for (var i=1;i<13;i++){
+			
+			var option = document.createElement("option");
+			option.innerHTML = i;
+			
 			if(i == month){
-				html+= "<option selected='selected'>"+ i +"</option>";
-			}else{
-				html+= "<option>"+ i +"</option>";
-			}	
+				option.selected="selected";	
+			}
+			
+                        monthSel.appendChild(option);			
 		}
-		monthSel.innerHTML=html;
 	}
 	//产生年菜单
-	function genYear(year){
-		yearSel.innerHTML="";
-		var html="";
+	function genYear(year){ 
+                yearSel.innerHTML=""; 	
 		for (var i=firstYear;i>lastYear;i--){
+			
+			var option = document.createElement("option");
+			option.innerHTML = i;
+			
 			if(i == year){
-				html+= "<option selected='selected'>"+ i +"</option>";
-			}else{
-				html+= "<option>"+ i +"</option>";
+				option.selected="selected";	
 			}
+			
+			yearSel.appendChild(option);
 		}
-		yearSel.innerHTML=html;
 	}
 	
 	//产生日历表格tb数据
@@ -174,7 +179,7 @@
 		}else{
 			tb[0][week]=1;
 			for(var i=0;i<7;i++){
-				if (i<week){//上月日期
+				if (i<week){//不可选日期
 					tb[0][i]=preDays-week+1+i;				
 				}else if(i>week){
 					tb[0][i]=tb[0][i-1]+1;
@@ -183,7 +188,7 @@
 		}
 		
 		//得到后面的数据
-	    for (var i=1;i<6;i++){
+	 for (var i=1;i<6;i++){
 			for (var j=0; j<7; j++){
 				if(week==0) tb[1][0]=1;
 				else tb[1][0]=tb[0][6]+1;
@@ -194,7 +199,7 @@
 					tb[i][j]= tb[i][j-1]+1;
 				}
 
-                if(tb[i][j] > days){//下月日期
+                if(tb[i][j] > days){//不可选日期
 					tb[i][j] = tb[i][j]-days;
 				}
 				
@@ -203,7 +208,7 @@
 	}
 	
 	//根据表格数据动态产生日历表格
-	function genTable(){
+	function genTable(){//-------还存在问题：样式的设置 和 1号是周日时日期的对应
 		createThead();//创建表头
 	    createTbody();//创建表格主体
 		
@@ -271,7 +276,7 @@
 					selDay = this.innerHTML;
 					
 					prevDay();
-					
+
 					getSelDate();
 					this.style.backgroundColor="#c9c";
 					this.style.color="#fff";
@@ -281,8 +286,8 @@
 			for(var i=0;i<nextMonth_td.length;i++){
 				addHandler(nextMonth_td[i],"click",function(){
 					selDay = this.innerHTML;
-					
 					nextDay();
+					
 					
 					getSelDate();
 					this.style.backgroundColor="#c9c";
