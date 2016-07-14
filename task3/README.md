@@ -11,7 +11,6 @@
 * task3-3 ：在 task3-2 的基础上实现了表格的表头冻结功能, [Demo](http://1039958384.github.io/IFE/task3/task3-3/);
 * task3-4 ：实现了一个简单的日历,[Demo](http://1039958384.github.io/IFE/task3/task3-4/);
 * task3-5 ：在 task3-4 的基础上对日历的功能做了升级，给日历提供了显示日期的接口和选择日期后的回调函数接口,[Demo](http://1039958384.github.io/IFE/task3/task3-5/);
-* task3-6 ：在 task3-4 的基础上继续增强日历的功能，使得日历即可以选择一天，也可以选择一个时间段,[Demo](http://1039958384.github.io/IFE/task3/task3-6/)。
 
 
 # 功能组件重构
